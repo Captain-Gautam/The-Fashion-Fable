@@ -1,37 +1,6 @@
-import { useState } from 'react';
-import { Phone, Clock, MapPin, Instagram, Send } from 'lucide-react';
+import { Phone, Clock, MapPin, Instagram } from 'lucide-react';
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    service: '',
-    message: ''
-  });
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Handle form submission here
-    console.log('Form submitted:', formData);
-    // You can add form submission logic here
-    alert('Thank you for your message! I will get back to you soon.');
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      service: '',
-      message: ''
-    });
-  };
-
   const contactInfo = [
     {
       icon: <Phone className="h-6 w-6" />,
@@ -51,16 +20,6 @@ const Contact = () => {
       details: "Hamiparavas, Old-Main Bazar, Bhachau, Kutch, Gujarat",
       action: null
     }
-  ];
-
-  const services = [
-    'Custom Traditional Wear',
-    'Modern Fusion Outfits',
-    'Wedding & Event Styling',
-    'Fashion Design Course',
-    'Pattern Making',
-    'Personal Consultation',
-    'Other'
   ];
 
   return (
