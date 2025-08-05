@@ -1,5 +1,6 @@
 import { useParams, Link } from 'react-router-dom';
-import { ArrowLeft, Clock, Users, Award, BookOpen, CheckCircle } from 'lucide-react';
+import { ArrowLeft, Clock, Award, BookOpen, CheckCircle } from 'lucide-react';
+import CourseGallery from '../components/CourseGallery';
 
 const CourseDetail = () => {
   const { courseId } = useParams<{ courseId: string }>();
@@ -9,7 +10,6 @@ const CourseDetail = () => {
       title: 'Certificate Course with 90 Days',
       duration: '3 months',
       level: 'Comprehensive',
-      students: '150+',
       price: 'Contact for pricing',
       description: 'Complete fashion design certification covering cutting, stitching, and measurement techniques. This comprehensive course is perfect for those who want to master all aspects of fashion design.',
       longDescription: 'This 90-day certificate course is designed to provide you with comprehensive knowledge and hands-on experience in fashion design. You will learn traditional techniques combined with modern approaches to create beautiful garments. The course covers everything from basic stitching to advanced pattern making.',
@@ -43,7 +43,6 @@ const CourseDetail = () => {
       title: 'Basic Course',
       duration: '1 month',
       level: 'Beginner',
-      students: '200+',
       price: 'Contact for pricing',
       description: 'Perfect starting point for beginners to learn fundamental stitching techniques.',
       longDescription: 'This basic course is ideal for beginners who want to learn the fundamentals of fashion design and stitching. You will start with simple projects and gradually build your skills.',
@@ -63,8 +62,237 @@ const CourseDetail = () => {
       ],
       prerequisites: 'No prior experience required',
       schedule: 'Flexible timing available'
-    }
-    // Add more courses as needed
+    },
+    'unique-course': {
+      title: 'Unique Course',
+      duration: '3 months',
+      level: 'Advanced',
+      price: 'Contact for pricing',
+      description: 'Specialized course focusing on unique designs and intricate patterns.',
+      longDescription: 'This unique course is designed for those who want to explore advanced and creative fashion techniques. You will work on special projects and develop your own signature style.',
+      curriculum: [
+        'થેલી (ગોળ ચોરસ) - Bags (Round & Square)',
+        'તકિયા (Pillows)',
+        'તકિયા ડિઝાઈન (Pillow Designs)',
+        'બેબી-ફ્રોક નેક પેટર્ન (Baby Frock Neck Patterns)',
+        'ચણીયો (Chaniya)'
+      ],
+      includes: undefined,
+      highlights: [
+        'Advanced creative projects',
+        'Unique pattern making',
+        'Personalized guidance',
+        'Portfolio development'
+      ],
+      prerequisites: 'Basic stitching knowledge recommended',
+      schedule: 'Flexible timing available'
+    },
+    'dress-course': {
+      title: 'Dress Course',
+      duration: '1 month',
+      level: 'Intermediate',
+      price: 'Contact for pricing',
+      description: 'Comprehensive dress making course covering various styles and techniques.',
+      longDescription: 'Learn to make a variety of dress styles, from simple to advanced, with hands-on practice and expert instruction.',
+      curriculum: [
+        'સાદો ડ્રેસ (Simple Dress)',
+        'કોલરદાર ડ્રેસ (Collar Dress)',
+        'ચેનવાળો ડ્રેસ (Chain Dress)',
+        'સાદી સલવાર (Simple Salwar)',
+        'ધોતી સલવાર (Dhoti Salwar)',
+        'પટિયાલા સલવાર (Patiala Salwar)',
+        'ટોપ (Tops)'
+      ],
+      includes: 'કટીંગ + સિલાઈ + મેજરમેન્ટ (Cutting + Stitching + Measurement)',
+      highlights: [
+        'Dress making from scratch',
+        'Pattern drafting',
+        'Finishing techniques',
+        'Project-based learning'
+      ],
+      prerequisites: 'Basic sewing skills',
+      schedule: 'Flexible timing available'
+    },
+    'kurti-design-course': {
+      title: 'Kurti Design Course',
+      duration: '1 month',
+      level: 'Intermediate',
+      price: 'Contact for pricing',
+      description: 'Specialized course focusing on various kurti designs and patterns.',
+      longDescription: 'Master the art of kurti design with a focus on traditional and modern patterns, including hands-on practice.',
+      curriculum: [
+        'શ્રી કટ કુર્તી + કોલર (Shree Cut Kurti + Collar)',
+        'નાયરા કટ કુર્તી (Nyra Cut Kurti)',
+        'બેબી બટન (Baby Buttons)',
+        'પોકેટ + પેન્ટ (Pockets + Pants)',
+        'પ્લાઝો (Palazzo)',
+        'ધોતી + સલવાર (Dhoti + Salwar)',
+        'કેડીયા કુર્તી (Kedia Kurti)',
+        'લોંગ કુર્તી (Long Kurti)',
+        'અમરેલા + અંગરખા પેટર્ન કુર્તી (Umbrella + Angrakha Pattern Kurti)'
+      ],
+      includes: undefined,
+      highlights: [
+        'Kurti pattern mastery',
+        'Modern and traditional styles',
+        'Hands-on projects',
+        'Expert feedback'
+      ],
+      prerequisites: 'Basic sewing skills',
+      schedule: 'Flexible timing available'
+    },
+    'simple-blouse-course': {
+      title: 'Simple Blouse Course',
+      duration: '1 month',
+      level: 'Beginner',
+      price: 'Contact for pricing',
+      description: 'Learn the fundamentals of blouse making with various traditional styles.',
+      longDescription: 'This course covers the basics of blouse making, including traditional and modern styles, with step-by-step guidance.',
+      curriculum: [
+        'સાદુ બ્લાઉઝ (Simple Blouse)',
+        'કટોરી બ્લાઉઝ (Katori Blouse)',
+        'ચાર ટક્સ બ્લાઉઝ (Four Tucks Blouse)',
+        'પ્રિન્સકટ બ્લાઉઝ (Princess Cut Blouse)',
+        'ગોળ ગળા પાઈપીંગ (Round Neck Piping)',
+        'પાંદ ગળુ ડિઝાઇન (Shoulder Neck Design)',
+        'મટકા ગળુ ડિઝાઇન (Matka Neck Design)'
+      ],
+      includes: undefined,
+      highlights: [
+        'Traditional blouse making',
+        'Pattern drafting',
+        'Step-by-step instruction',
+        'Beginner friendly'
+      ],
+      prerequisites: 'No prior experience required',
+      schedule: 'Flexible timing available'
+    },
+    'blouse-pattern-design-course': {
+      title: 'Blouse Pattern Design Course',
+      duration: '1 month',
+      level: 'Advanced',
+      price: 'Contact for pricing',
+      description: 'Advanced blouse patterns and intricate design techniques.',
+      longDescription: 'Take your blouse making skills to the next level with advanced patterns and design techniques.',
+      curriculum: [
+        'કટોરી બ્લાઉઝ + બેક નેક પેટર્ન (Katori Blouse + Back Neck Pattern)',
+        'ચાર ટક્ષ બ્લાઉઝ + સાઈડ કટ પેટર્ન (Four Tucks Blouse + Side Cut Pattern)',
+        'પ્રિન્સેસ કટ બ્લાઉઝ + બોટ નેક (Princess Cut Blouse + Boat Neck)',
+        'સ્લીવ પેટર્ન (Sleeve Patterns)',
+        'પફ સ્લીવ (Puff Sleeves)',
+        'પ્રિન્સેસ વિથ પાછળ હુક પેટર્ન (Princess with Back Hook Pattern)',
+        'કોલર ચેન + બ્લાઉઝ (Collar Chain + Blouse)',
+        'પ્રિન્સેસ (પેડેડ) બ્લાઉઝ (Princess Padded Blouse)'
+      ],
+      includes: undefined,
+      highlights: [
+        'Advanced pattern making',
+        'Complex designs',
+        'Professional finishing',
+        'Portfolio projects'
+      ],
+      prerequisites: 'Simple blouse course recommended',
+      schedule: 'Flexible timing available'
+    },
+    'special-course': {
+      title: 'Special Course',
+      duration: '1 month',
+      level: 'Advanced',
+      price: 'Contact for pricing',
+      description: 'Exclusive designs for special occasions and intricate garments.',
+      longDescription: 'Learn to create special occasion wear and intricate garments with expert guidance and creative freedom.',
+      curriculum: [
+        'ચણીયા ચોલી + બ્લાઉઝ (Chaniya Choli + Blouse)',
+        'વન પીસ (One Piece)',
+        'બેબી ફ્રોક (Baby Frock)',
+        'ડિઝાઇનર ચોલી (Designer Choli)',
+        'ફક્ત ચોલી બ્લાઉઝ (Only Choli Blouse)'
+      ],
+      includes: undefined,
+      highlights: [
+        'Special occasion designs',
+        'Creative garment making',
+        'Expert mentorship',
+        'Showcase opportunities'
+      ],
+      prerequisites: 'Intermediate sewing skills',
+      schedule: 'Flexible timing available'
+    },
+    'advanced-course': {
+      title: 'Advanced Course',
+      duration: '1 month',
+      level: 'Expert',
+      price: 'Contact for pricing',
+      description: 'Master level course for complex designs and professional techniques.',
+      longDescription: 'This course is for those who want to master complex designs and professional techniques in fashion design.',
+      curriculum: [
+        'અમ્રૈલા પ્લાઝો (Umbrella Palazzo)',
+        'અમ્રૈલા પ્લાઝો વિથ શોર્ટ ટોપ (Umbrella Palazzo with Short Top)',
+        'અફઘાની સલવાર વિથ કુર્તી (Afghani Salwar with Kurti)',
+        'પંજાબી સલવાર વિથ ટોપ (Punjabi Salwar with Top)',
+        'પાકિસ્તાની સ્ટાઈલ શુટ (Pakistani Style Suit)',
+        'Coord Set',
+        'પેન્ટ ડિઝાઇન વિથ કુર્તી (Pant Design with Kurti)'
+      ],
+      includes: undefined,
+      highlights: [
+        'Expert-level projects',
+        'Professional techniques',
+        'Portfolio building',
+        'Career guidance'
+      ],
+      prerequisites: 'Advanced sewing skills',
+      schedule: 'Flexible timing available'
+    },
+  };
+
+  const courseImages: Record<string, string[]> = {
+    'certificate-course-90-days': [
+      '/courses/certificate-course-90-days/1.jpg',
+      '/courses/certificate-course-90-days/2.jpg',
+      '/courses/certificate-course-90-days/3.jpg',
+      '/courses/certificate-course-90-days/4.jpg'
+    ],
+    'basic-course': [
+      '/courses/basic-course/1.jpg',
+      '/courses/basic-course/2.jpg',
+      '/courses/basic-course/3.jpg'
+    ],
+    'unique-course': [
+      '/courses/unique-course/1.jpg',
+      '/courses/unique-course/2.jpg',
+      '/courses/unique-course/3.jpg'
+    ],
+    'dress-course': [
+      '/courses/dress-course/1.jpg',
+      '/courses/dress-course/2.jpg',
+      '/courses/dress-course/3.jpg'
+    ],
+    'kurti-design-course': [
+      '/courses/kurti-design-course/1.jpg',
+      '/courses/kurti-design-course/2.jpg',
+      '/courses/kurti-design-course/3.jpg'
+    ],
+    'simple-blouse-course': [
+      '/courses/simple-blouse-course/1.jpg',
+      '/courses/simple-blouse-course/2.jpg',
+      '/courses/simple-blouse-course/3.jpg'
+    ],
+    'blouse-pattern-design-course': [
+      '/courses/blouse-pattern-design-course/1.jpg',
+      '/courses/blouse-pattern-design-course/2.jpg',
+      '/courses/blouse-pattern-design-course/3.jpg'
+    ],
+    'special-course': [
+      '/courses/special-course/1.jpg',
+      '/courses/special-course/2.jpg',
+      '/courses/special-course/3.jpg'
+    ],
+    'advanced-course': [
+      '/courses/advanced-course/1.jpg',
+      '/courses/advanced-course/2.jpg',
+      '/courses/advanced-course/3.jpg'
+    ]
   };
 
   const course = courseId ? courses[courseId as keyof typeof courses] : null;
@@ -119,11 +347,6 @@ const CourseDetail = () => {
                   <p className="font-semibold text-gray-900">{course.level}</p>
                 </div>
                 <div className="text-center bg-white rounded-lg p-4 shadow-sm">
-                  <Users className="h-6 w-6 text-primary-600 mx-auto mb-2" />
-                  <p className="text-sm text-gray-500">Students</p>
-                  <p className="font-semibold text-gray-900">{course.students}</p>
-                </div>
-                <div className="text-center bg-white rounded-lg p-4 shadow-sm">
                   <BookOpen className="h-6 w-6 text-primary-600 mx-auto mb-2" />
                   <p className="text-sm text-gray-500">Price</p>
                   <p className="font-semibold text-gray-900">{course.price}</p>
@@ -132,7 +355,7 @@ const CourseDetail = () => {
             </div>
             
             <div className="lg:col-span-1">
-              <div className="bg-white rounded-xl p-6 shadow-lg sticky top-8">
+              <div className="bg-white rounded-xl p-6 shadow-lg sticky top-8 flex flex-col items-center">
                 <h3 className="text-xl font-bold text-gray-900 mb-4">Enroll Now</h3>
                 <p className="text-gray-600 text-sm mb-6">
                   Start your fashion design journey with expert guidance and hands-on training.
@@ -143,10 +366,12 @@ const CourseDetail = () => {
                 >
                   Contact for Enrollment
                 </Link>
-                <p className="text-xs text-gray-500 text-center">
-                  Flexible payment options available
-                </p>
               </div>
+              <CourseGallery
+                images={courseImages[courseId!] || []}
+                buttonClassName="w-full bg-gradient-to-r from-fuchsia-600 via-pink-500 to-purple-600 text-white font-bold py-3 rounded-lg shadow-lg hover:scale-105 hover:shadow-xl transition-all duration-300 text-lg flex items-center justify-center gap-2 mt-4"
+                icon
+              />
             </div>
           </div>
         </div>
@@ -155,7 +380,7 @@ const CourseDetail = () => {
       {/* Course Details */}
       <section className="py-16 px-4">
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 mt-8">
             {/* Main Content */}
             <div className="lg:col-span-2 space-y-12">
               {/* Course Overview */}
@@ -210,29 +435,6 @@ const CourseDetail = () => {
 
             {/* Sidebar */}
             <div className="lg:col-span-1 space-y-8">
-              {/* Course Info */}
-              <div className="bg-white rounded-xl p-6 shadow-md">
-                <h3 className="text-xl font-bold text-gray-900 mb-4">Course Information</h3>
-                <div className="space-y-4">
-                  <div>
-                    <p className="text-sm text-gray-500">Prerequisites</p>
-                    <p className="font-medium text-gray-900">{course.prerequisites}</p>
-                  </div>
-                  <div>
-                    <p className="text-sm text-gray-500">Schedule</p>
-                    <p className="font-medium text-gray-900">{course.schedule}</p>
-                  </div>
-                  <div>
-                    <p className="text-sm text-gray-500">Class Size</p>
-                    <p className="font-medium text-gray-900">Small batches (8-12 students)</p>
-                  </div>
-                  <div>
-                    <p className="text-sm text-gray-500">Language</p>
-                    <p className="font-medium text-gray-900">Gujarati & Hindi</p>
-                  </div>
-                </div>
-              </div>
-
               {/* What You Get */}
               <div className="bg-white rounded-xl p-6 shadow-md">
                 <h3 className="text-xl font-bold text-gray-900 mb-4">What You Get</h3>

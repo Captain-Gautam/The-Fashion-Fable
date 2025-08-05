@@ -7,10 +7,12 @@ import Collections from './pages/Collections.tsx';
 import About from './pages/About.tsx';
 import Contact from './pages/Contact.tsx';
 import CourseDetail from './pages/CourseDetail.tsx';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <div className="min-h-screen bg-gradient-to-br from-purple-50 via-white to-teal-50 flex flex-col">
         <Header />
         <main className="flex-grow relative overflow-hidden">

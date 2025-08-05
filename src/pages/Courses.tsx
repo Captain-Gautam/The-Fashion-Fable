@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Clock, Users, Award, ArrowRight } from 'lucide-react';
+import { Clock, Award, ArrowRight } from 'lucide-react';
 
 const Courses = () => {
   const courses = [
@@ -8,7 +8,6 @@ const Courses = () => {
       title: 'Certificate Course with 90 Days',
       duration: '3 months',
       level: 'Comprehensive',
-      students: '150+',
       price: 'Contact for pricing',
       description: 'Complete fashion design certification covering cutting, stitching, and measurement techniques.',
       curriculum: [
@@ -33,7 +32,6 @@ const Courses = () => {
       title: 'Unique Course',
       duration: '3 months',
       level: 'Advanced',
-      students: '80+',
       price: 'Contact for pricing',
       description: 'Specialized course focusing on unique designs and intricate patterns.',
       curriculum: [
@@ -49,7 +47,6 @@ const Courses = () => {
       title: 'Basic Course',
       duration: '1 month',
       level: 'Beginner',
-      students: '200+',
       price: 'Contact for pricing',
       description: 'Perfect starting point for beginners to learn fundamental stitching techniques.',
       curriculum: [
@@ -65,7 +62,6 @@ const Courses = () => {
       title: 'Dress Course',
       duration: '1 month',
       level: 'Intermediate',
-      students: '120+',
       price: 'Contact for pricing',
       description: 'Comprehensive dress making course covering various styles and techniques.',
       curriculum: [
@@ -84,7 +80,6 @@ const Courses = () => {
       title: 'Kurti Design Course',
       duration: '1 month',
       level: 'Intermediate',
-      students: '180+',
       price: 'Contact for pricing',
       description: 'Specialized course focusing on various kurti designs and patterns.',
       curriculum: [
@@ -104,7 +99,6 @@ const Courses = () => {
       title: 'Simple Blouse Course',
       duration: '1 month',
       level: 'Beginner',
-      students: '150+',
       price: 'Contact for pricing',
       description: 'Learn the fundamentals of blouse making with various traditional styles.',
       curriculum: [
@@ -122,7 +116,6 @@ const Courses = () => {
       title: 'Blouse Pattern Design Course',
       duration: '1 month',
       level: 'Advanced',
-      students: '100+',
       price: 'Contact for pricing',
       description: 'Advanced blouse patterns and intricate design techniques.',
       curriculum: [
@@ -141,7 +134,6 @@ const Courses = () => {
       title: 'Special Course',
       duration: '1 month',
       level: 'Advanced',
-      students: '70+',
       price: 'Contact for pricing',
       description: 'Exclusive designs for special occasions and intricate garments.',
       curriculum: [
@@ -157,7 +149,6 @@ const Courses = () => {
       title: 'Advanced Course',
       duration: '1 month',
       level: 'Expert',
-      students: '90+',
       price: 'Contact for pricing',
       description: 'Master level course for complex designs and professional techniques.',
       curriculum: [
@@ -238,7 +229,7 @@ const Courses = () => {
                     </div>
                   </div>
 
-                  <div className="grid grid-cols-3 gap-4 mb-6">
+                  <div className="grid grid-cols-2 gap-4 mb-6">
                     <div className="text-center">
                       <div className="flex items-center justify-center mb-1">
                         <Clock className="h-4 w-4 text-primary-600" />
@@ -252,13 +243,6 @@ const Courses = () => {
                       </div>
                       <p className="text-xs text-gray-500">Level</p>
                       <p className="text-sm font-medium text-gray-900">{course.level}</p>
-                    </div>
-                    <div className="text-center">
-                      <div className="flex items-center justify-center mb-1">
-                        <Users className="h-4 w-4 text-primary-600" />
-                      </div>
-                      <p className="text-xs text-gray-500">Students</p>
-                      <p className="text-sm font-medium text-gray-900">{course.students}</p>
                     </div>
                   </div>
 
@@ -295,6 +279,7 @@ const Courses = () => {
                     <Link
                       to={`/courses/${course.id}`}
                       className="btn-primary text-sm inline-flex items-center"
+                      onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
                     >
                       View Details
                       <ArrowRight className="ml-1 h-4 w-4" />
